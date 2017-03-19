@@ -19,7 +19,10 @@ public class Plik implements Obsluguj {
 		}
 	}
 	
-	public void readFile(){
+	
+	@Override
+	public void obsluguj(){
+		System.out.println("Jestem w Plik.java i zaraz piêknie wczytam z pliku");
 		while(open.hasNext()){
 			String a = open.next();
 			String b = open.next();
@@ -27,25 +30,13 @@ public class Plik implements Obsluguj {
 			
 			System.out.printf("%s %s %s \n", a,b,c);
 		}  
-	}
 	
-	@Override
-	public void obsluguj(){
-		System.out.println("Jestem w Plik.java i zaraz piêknie wczytam z pliku");
-		
-		while(x.hasNext()){
-			String a = x.next();
-			String b = x.next();
-			String c = x.next();
-			
-			System.out.printf("%s %s %s \n", a,b,c);
-		}
 		
 	}
 	
 	
 
 	public void closeFile(){
-		x.close();
+		open.close();
 	}
 }
