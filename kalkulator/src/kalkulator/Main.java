@@ -15,8 +15,8 @@ public class Main {
 		System.out.println("Podaj czy chcesz wczytywaæ dane z pliku czy z klawiatury: ");
 		System.out.println("1 - klawiatura, 2 - plik, 3 - koniec pracy programu");
 
-		System.out.println("ZACZYNAMY ZABAWÊ BARDZO");;
-
+		System.out.println("ZACZYNAMY ZABAWÊ BARDZO");
+		System.out.println("Test 1");
 		Scanner keyboard = new Scanner(System.in);
 		int wybor;
 		//keyboard.nextLine();
