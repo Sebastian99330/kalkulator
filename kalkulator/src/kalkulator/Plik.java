@@ -1,19 +1,32 @@
 package kalkulator;
 
 import java.io.File;
+import java.util.Formatter;
 import java.util.Scanner;
 
 public class Plik implements Obsluguj {
 	
+	private Scanner open;
+	private Formatter write;
 	
-	private Scanner x;
 	public void openFile(){
 		try{
-			x=new Scanner(new File("chinese.txt"));
+			open=new Scanner(new File("dzialania.txt"));
+			System.out.println("Poprawnie otwarto plik");
 		}
 		catch(Exception e){
-			System.out.println("You fckd up sthg!");
+			System.out.println("Nie uda³o siê otworzyæ pliku.");
 		}
+	}
+	
+	public void readFile(){
+		while(open.hasNext()){
+			String a = open.next();
+			String b = open.next();
+			String c = open.next();
+			
+			System.out.printf("%s %s %s \n", a,b,c);
+		}  
 	}
 	
 	@Override
