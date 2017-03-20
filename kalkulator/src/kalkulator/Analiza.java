@@ -3,7 +3,8 @@ package kalkulator;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Analiza {
+
+public class Analiza {	//Analiza podanej linijki
 	
 	
 	public double Operuj(String linijka){	//operuj na przyjêtej linijce-dzia³aniu (np 3*3), tzn 

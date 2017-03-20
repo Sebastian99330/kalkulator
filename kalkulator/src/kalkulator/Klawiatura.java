@@ -3,9 +3,12 @@ package kalkulator;
 import java.util.Scanner;
 //import org.apache.commons.lang3.math.NumberUtils;	//czemu nie dzia³a?
 
+/*
+ * Klasa klawiatura - wczytuje od u¿ytkownika liniê-dzia³anie (np 3*4) i przekazuje j¹ do
+ * "analizy" czyli do klasy która odpowiednio zbada ten napis i obliczy ¿¹dane dzia³anie i zwróci wynik
+*/
 public class Klawiatura extends Analiza implements Obsluguj {
-	//Klasa klawiatura - wczytuje od u¿ytkownika liniê-dzia³anie (np 3*4) i przekazuje j¹ do
-	//"analizy" czyli do klasy która odpowiednio zbada ten napis i obliczy ¿¹dane dzia³anie i zwróci wynik
+	
 	
 	
 	@Override	//przys³oniête bo klasa Plik wygeneruje t¹ liniê-dzia³anie inaczej ni¿ ta Klawiatura

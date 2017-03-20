@@ -18,7 +18,6 @@ public class Main {
 
 		Scanner keyboard = new Scanner(System.in);
 		int wybor;
-		//keyboard.nextLine();
 		while((wybor=keyboard.nextInt())!=1 && wybor != 2 && wybor!=3){	//kontrola poprawnoœci danych, wyrzuci blad przy danych
 			//innych ni¿ 1, 2 albo 3
 			keyboard.nextLine();
