@@ -4,11 +4,13 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+/*
+ * Klasa Plik - wczytuje z pliku liniê-dzia³anie (np 5+4) i przekazuje j¹ do
+ * "analizy" czyli do klasy bazowej która odpowiednio zbada ten napis i obliczy ¿¹dane dzia³anie i zwróci wynik
+ */
+//p.s. jaka jest ró¿nica miêdzy interfejsem a klas¹ abstrakcyjn¹?
 public class Plik extends Analiza implements Obsluguj {
-	//Klasa Plik - wczytuje z pliku liniê-dzia³anie (np 5+4) i przekazuje j¹ do
-	//"analizy" czyli do klasy bazowej która odpowiednio zbada ten napis i obliczy ¿¹dane dzia³anie i zwróci wynik
 	
-	//jaka jest ró¿nica miêdzy interfejsem a klas¹ abstrakcyjn¹?
 	
 	private Scanner open;	//open to zmienna "wskanik do pliku"
 	
