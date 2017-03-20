@@ -1,18 +1,20 @@
 package kalkulator;
 
 import java.io.File;
-import java.util.Formatter;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
-public class Plik implements Obsluguj {
+public class Plik extends Analiza implements Obsluguj {
+	//Klasa Plik - wczytuje z pliku liniê-dzia³anie (np 5+4) i przekazuje j¹ do
+	//"analizy" czyli do klasy bazowej która odpowiednio zbada ten napis i obliczy ¿¹dane dzia³anie i zwróci wynik
 	
-	private Scanner open;
-	private Formatter write;
+	//jaka jest ró¿nica miêdzy interfejsem a klas¹ abstrakcyjn¹?
+	
+	private Scanner open;	//open to zmienna "wskanik do pliku"
 	
 	public void openFile(){
 		try{
 			open=new Scanner(new File("dzialania.txt"));
-			System.out.println("Poprawnie otwarto plik");
 		}
 		catch(Exception e){
 			System.out.println("Nie uda³o siê otworzyæ pliku.");
@@ -22,17 +24,18 @@ public class Plik implements Obsluguj {
 	
 	@Override
 	public void obsluguj(){
-		System.out.println("Jestem w Plik.java i zaraz piêknie wczytam z pliku");
-		while(open.hasNext()){
-			String a = open.next();
-			String b = open.next();
-			String c = open.next();
-			
-			System.out.printf("%s %s %s \n", a,b,c);
-		}  
-	
-		
-	}
+		openFile();
+		try{
+			while(open.hasNext()){	//jeœli coœ jest w tym pliku (jakieœ dzia³ania zapisane)
+				String linijka = open.next();	//to wczytujemy je
+				double wynik=Operuj(linijka);	//i dajemy do obliczenia
+			}
+		}
+		catch(Exception e){
+			System.out.println("Wyjatek po metodzie \"obsluguj\" czyli po wczytaniu linii tekstu");
+		}
+		closeFile();	
+	}	
 	
 	
 

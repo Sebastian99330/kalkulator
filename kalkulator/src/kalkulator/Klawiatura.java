@@ -1,50 +1,32 @@
 package kalkulator;
 
-import java.util.*;	//po scanner i po string tokenizer
-//import org.apache.commons.lang3.math.NumberUtils;
+import java.util.Scanner;
+//import org.apache.commons.lang3.math.NumberUtils;	//czemu nie dzia³a?
 
-public class Klawiatura implements Obsluguj {
-
-	@Override
+public class Klawiatura extends Analiza implements Obsluguj {
+	//Klasa klawiatura - wczytuje od u¿ytkownika liniê-dzia³anie (np 3*4) i przekazuje j¹ do
+	//"analizy" czyli do klasy która odpowiednio zbada ten napis i obliczy ¿¹dane dzia³anie i zwróci wynik
+	
+	
+	@Override	//przys³oniête bo klasa Plik wygeneruje t¹ liniê-dzia³anie inaczej ni¿ ta Klawiatura
 	public void obsluguj() {
 		// TODO Auto-generated method stub
-		
-		System.out.println("Podaj ci¹g znaków do obliczenia: ");
+		boolean czyCzytamy=true;	//jak u¿ytkownik wpisze "koniec" to damy na false
 		Scanner keyboard = new Scanner(System.in);
-		String linijka = keyboard.nextLine();
-		System.out.println("Wczytany tekst: " + linijka);
-		
-		StringTokenizer st = new StringTokenizer(linijka, "+-*/", true);
-		//char operator=' ';
-		String pom=null;
-		double liczba1=0, liczba2=0;
-		char operator=' ';
-		// w pêtli dopóki s¹ jeszcze tokeny (metoda hasMoreTokens()
-		//NumberUtils.toInt(nextToken);
-
-		Scanner sc = new Scanner(linijka);	//sc do rozdzielania linijki na liczby i operatory
-		
-		//double price1 = sc.nextDouble(), 
-		//while(st.hasMoreTokens()) {
-			pom=st.nextToken();		
-			Scanner sc2 = new Scanner(pom);	//sc2 do zmiany typu ze stringa na double
-			liczba1=sc2.nextDouble();
+		while(czyCzytamy){
 			
-			pom=st.nextToken();
-			operator=pom.charAt(0);
-			
-			pom=st.nextToken();		
-			sc2 = new Scanner(pom);	//sc2 do zmiany typu ze stringa na double
-			liczba2=sc2.nextDouble();
-		//}
-		System.out.println("Liczba1: " + liczba1);
-		System.out.println("Liczba1: " + liczba2);
-		double wynik = 0;
-		if(operator=='+'){wynik=liczba1+liczba2;}
-		if(operator=='-'){wynik=liczba1-liczba2;}
-		if(operator=='*'){wynik=liczba1*liczba2;}
-		if(operator=='/'){wynik=liczba1/liczba2;}
-		System.out.println("Wynik to: "+wynik);
+			System.out.println("Podaj ci¹g znaków do obliczenia (slowo \"koniec\" konczy wczytywanie): ");
+			String linijka = keyboard.nextLine();
+			System.out.println("Wczytany tekst: " + linijka);
+			if(linijka.equals("koniec")){
+				czyCzytamy=false;
+				continue;
+			}
+			double wynik=0;
+			wynik=Operuj(linijka);	//przekazujemy linijkê do obliczenia  do metody operuj z klasy bazowej Analiza
+		}
+		keyboard.close();
+		
 	}
 	
 }
