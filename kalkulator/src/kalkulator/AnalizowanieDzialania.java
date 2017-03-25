@@ -4,10 +4,10 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class AnalizujDzialanie {	//Analiza podanej linijki
+public class AnalizowanieDzialania {	//Analiza podanej linijki
 	
 	
-	public double Operuj(String linijka){	//operuj na przyjêtej linijce-dzia³aniu (np 3*3), tzn 
+	public double analizujDzialanie(String linijka){	//operuj na przyjêtej linijce-dzia³aniu (np 3*3), tzn 
 		//rozbierz go na czêœci pierwsze (dwie liczby i operator) i oblicz
 		
 		

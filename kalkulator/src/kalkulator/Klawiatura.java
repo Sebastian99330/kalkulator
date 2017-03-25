@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Klasa klawiatura - wczytuje od u¿ytkownika liniê-dzia³anie (np 3*4) i przekazuje j¹ do
  * "analizy" czyli do klasy która odpowiednio zbada ten napis i obliczy ¿¹dane dzia³anie i zwróci wynik
 */
-public class Klawiatura extends AnalizujDzialanie implements WczytywanieDzialania {
+public class Klawiatura extends AnalizowanieDzialania implements WczytywanieDzialania {
 	
 	
 	
@@ -26,7 +26,7 @@ public class Klawiatura extends AnalizujDzialanie implements WczytywanieDzialani
 				continue;
 			}
 			double wynik=0;
-			wynik=Operuj(linijka);	//przekazujemy linijkê do obliczenia  do metody operuj z klasy bazowej Analiza
+			wynik=analizujDzialanie(linijka);	//przekazujemy linijkê do obliczenia  do metody operuj z klasy bazowej Analiza
 		}
 		keyboard.close();
 		
