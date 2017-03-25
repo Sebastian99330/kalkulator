@@ -7,9 +7,10 @@ import java.util.Scanner;
  */
 public class Main {
 
+
 	public static void main(String[] args) {
 		System.out.println("Witaj");
-		Obsluguj rozmawiaj;	//zmienna od rozmawiania z u¿ytkownikiem
+		WczytywanieDzialania rozmawiaj;	//zmienna od rozmawiania z u¿ytkownikiem
 		//Obs³uguj to klasa bazowa od Klawiatury i Pliku. Wykorzystamy polimorfizm
 		
 		
@@ -26,13 +27,13 @@ public class Main {
 		if(wybor==1){
 			System.out.println("Poda³eœ 1. Wczytujemy z klawiatury");
 			rozmawiaj = new Klawiatura();
-			rozmawiaj.obsluguj();	//wywo³a metodê obs³uguj dla Klawiatury, czyli zacznie wczytywanie klawiatury z konsoli
+			rozmawiaj.wczytajDzialanie();	//wywo³a metodê obs³uguj dla Klawiatury, czyli zacznie wczytywanie klawiatury z konsoli
 
 		}
 		if(wybor==2){
 			System.out.println("PODA£EŒ 2. Wczytujemy z pliku");
 			rozmawiaj = new Plik();
-			rozmawiaj.obsluguj(); //wywo³a metodê obs³uguj dla Pliku, czyli zacznie wczytywanie z pliku
+			rozmawiaj.wczytajDzialanie(); //wywo³a metodê obs³uguj dla Pliku, czyli zacznie wczytywanie z pliku
 			
 		}
 		if(wybor==3){

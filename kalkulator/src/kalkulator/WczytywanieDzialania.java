@@ -11,7 +11,7 @@ package kalkulator;
  * zmienna typu obs³uguj bêdzie wykorzystana w mainie ¿eby zrobiæ polimorfizm - wcisn¹æ do niej albo new Klawiature,
  * albo new Plik, zale¿y co u¿ytkownik bêdzie chcia³ robiæ.
 */
-public interface Obsluguj {	
+public interface WczytywanieDzialania {	
 	
-	public void obsluguj();	
+	public void wczytajDzialanie();	
 }

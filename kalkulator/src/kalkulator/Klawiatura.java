@@ -7,12 +7,12 @@ import java.util.Scanner;
  * Klasa klawiatura - wczytuje od u¿ytkownika liniê-dzia³anie (np 3*4) i przekazuje j¹ do
  * "analizy" czyli do klasy która odpowiednio zbada ten napis i obliczy ¿¹dane dzia³anie i zwróci wynik
 */
-public class Klawiatura extends Analiza implements Obsluguj {
+public class Klawiatura extends AnalizujDzialanie implements WczytywanieDzialania {
 	
 	
 	
 	@Override	//przys³oniête bo klasa Plik wygeneruje t¹ liniê-dzia³anie inaczej ni¿ ta Klawiatura
-	public void obsluguj() {
+	public void wczytajDzialanie() {
 		// TODO Auto-generated method stub
 		boolean czyCzytamy=true;	//jak u¿ytkownik wpisze "koniec" to damy na false
 		Scanner keyboard = new Scanner(System.in);

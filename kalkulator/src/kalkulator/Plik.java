@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
  * "analizy" czyli do klasy bazowej która odpowiednio zbada ten napis i obliczy ¿¹dane dzia³anie i zwróci wynik
  */
 //p.s. jaka jest ró¿nica miêdzy interfejsem a klas¹ abstrakcyjn¹?
-public class Plik extends Analiza implements Obsluguj {
+public class Plik extends AnalizujDzialanie implements WczytywanieDzialania {
 	
 	
 	private Scanner open;	//open to zmienna "wskanik do pliku"
@@ -25,7 +25,7 @@ public class Plik extends Analiza implements Obsluguj {
 	
 	
 	@Override
-	public void obsluguj(){
+	public void wczytajDzialanie(){
 		openFile();
 		try{
 			while(open.hasNext()){	//jeœli coœ jest w tym pliku (jakieœ dzia³ania zapisane)
